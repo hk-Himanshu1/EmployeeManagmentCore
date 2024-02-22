@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EmployeeManagmentCore</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/EmployeeManagmentCore.styles.css" asp-append-version="true" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<style type="text/css">
+    body {
+        background: linear-gradient(to right,#008081,#6694F6);
+        padding-left: 35%;
+        padding-right: 35%;
+    }
+
+    .card, .card-body {
+        display: block;
+        top: 200px;
+        text-align: center;
+        background: linear-gradient(to left, #EFF6FC, #BFDDF4);
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+    }
+
+    label{
+        font-family: sans-serif;
+    }
+
+
+    #VohraLogo {
+        height: 50px;
+        width: 250px;
+        margin: 0px 20px 0px 0px;
+    }
+
+    #lblWel, #lblEmp {
+        font-family: sans-serif;
+    }
+
+</style>
+<body>
+    <div class="card">
+        <div class="card-body">
+            <img src="~/vohra-logo-blue.png" id="VohraLogo" />
+            </br></br>
+            <h3 id="lblWel">Welcome to the</h3>
+            <h1 id="lblEmp">Employee Portal</h1>
+            </br>
+            <div id="userDetails" class="input-group mb-sm-3" style="padding: 0px 0px 15px 55px;display:none">
+                <div class="row mb-1" style="margin: 0px 0px 0px -2px;">
+                        <div class="col-md-3">
+                            <label class="">Username:</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input class="input-group-text" id="userName" type="text" />
+                        </div>
+                </div>
+                <br /> 
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>Password:</label> 
+                    </div>
+                    <div class="col-md-9">
+                        <input class="input-group-text" id="password" type="password" />
+                    </div>
+                </div>
+            </div>
+
+            <div id="ServiceType" style="padding-left:40px;padding-right:40px;display:none;">
+                <select class="form-select form-select-sm mb-2">
+                    <option>Select One Service Type</option>
+                </select>
+            </div>
+            <button type="button" id="btnLogin" class="btn btn-success" value="Login" style="padding: 10px 80px 10px 80px;font-family: sans-serif;" onclick="$('#ServiceType').show();$('#btnLoginPortal').show();$('#btnLogin').hide();">Click To Login</button>
+            <button type="button" id="btnLoginPortal" class="btn btn-success" value="Login" style="padding: 10px 80px 10px 80px;display:none">Login Portal</button>
+
+            <a class="nav-link text-dark mt-2 text-decoration-underline" asp-area="" asp-controller="EmployeeRegistration" asp-action="NewRegistration">New Employee Registration</a>
+        </div>
+    </div>
+
+    @* <div class="container">
+    <main role="main" class="pb-3">
+
+    </main>
+    </div> *@
+</body>
+</html>
+
