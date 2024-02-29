@@ -1,4 +1,5 @@
-﻿using EmployeeManagmentCore.Models;
+﻿using DAL;
+using EmployeeManagmentCore.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -13,9 +14,17 @@ namespace EmployeeManagmentCore.Controllers
             _logger = logger;
         }
 
-        public IActionResult NewRegistration()
+        public async Task<IActionResult>NewRegistration()
         {
-            return View();
+            var data = await GetCountrys();
+            return View(data);
+        }
+
+        public static async Task<List<string>> GetCountrys() {
+
+            var Countrydata = await RegistrationApi.GetCountriesData();
+            return Countrydata;
+
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

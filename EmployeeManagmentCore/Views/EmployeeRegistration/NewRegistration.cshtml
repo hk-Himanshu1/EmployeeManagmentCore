@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<string>
+@{
     ViewData["Title"] = "New Registration";
     Layout = null;
 }
@@ -59,7 +60,9 @@
                             </div>
                             <div class="col">
                                 <label class="text-start">Country:</label>
-                                <input class="form-control" type="text" id="lblCountry" placeholder="Enter Country" />
+                                <select class="form-control" id="ddlCountry" placeholder="select One Country">
+                                    <option value="">Select One Country</option>
+                                </select>
                             </div>
 
                         </div>
@@ -74,7 +77,9 @@
                             </div>
                             <div class="col">
                                 <label class="text-start">State</label>
-                                <input class="form-control" type="text" id="lblState" placeholder="Enter State" />
+                                <select class="form-control" id="ddlState">
+                                    <option value="">Select One Value</option>
+                                </select>
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -83,8 +88,25 @@
                                 <input class="form-control" type="text" id="lblGender" placeholder="Enter Gender" />
                             </div>
                             <div class="col">
-                                <label class="text-start">UserType:</label>
-                                <input class="form-control" type="text" id="lblUserType" placeholder="Select UserType"/>
+                                <label class="text-start">User Type:</label>
+                                <input class="form-control" type="text" id="lblUserType" placeholder="Select User Type"/>
+                            </div>
+                            <div class="col">
+                                <label class="text-start">Pin Code:</label>
+                                <input class="form-control" type="text" id="lblPinCode" placeholder="Select Pin Code" />
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col mt-4">
+                                <button class="btn btn-primary" type="button">Submit</button>
+                                <button class="btn btn-secondary" type="button">Reset</button>
+                                <a class="btn btn-secondary" asp-area="" asp-controller="" asp-action="">Cancel</a>
+                            </div>
+                            <div class="col">
+                                
+                            </div>
+                            <div class="col">
+                                
                             </div>
                         </div>
                     </div>
