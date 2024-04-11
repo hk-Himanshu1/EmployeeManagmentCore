@@ -1,6 +1,8 @@
 ﻿using DAL;
+using DAL.Models;
 using EmployeeManagmentCore.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace EmployeeManagmentCore.Controllers
@@ -14,14 +16,34 @@ namespace EmployeeManagmentCore.Controllers
             _logger = logger;
         }
 
-        public async Task<IActionResult>NewRegistration()
+        [HttpPost]
+        public async Task<IActionResult> CreateNewEmployee([FromBody] NewEmployeeData newData)
         {
-            var data = await GetCountrys();
-            return View(data);
+            // Here you can process the received data, for example, save it to a database
+            // For now, let's just return the received data
+            return Ok(newData);
         }
 
-        public static async Task<List<string>> GetCountrys() {
+        public async Task<IActionResult> NewRegistration()
+        {
+            var countries = await GetCountrys();
+            ViewBag.CountryList = countries;
+            var userTypes =  LoginService.GetUserType();
+            var userTypesList = new List<UserType>();
+            foreach (var userType in userTypes)
+            {
+                userTypesList.Add(new UserType
+                {
+                    ID = userType.Id.ToString(),
+                    Type = userType.Type
+                });
+            }
+            ViewBag.UserType = userTypesList;
+            return View(countries);
+        }
 
+
+        public static async Task<List<string>> GetCountrys() {
             var Countrydata = await RegistrationApi.GetCountriesData();
             return Countrydata;
 

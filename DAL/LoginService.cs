@@ -1,6 +1,9 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using DAL.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 
 namespace DAL
 {
@@ -13,20 +16,25 @@ namespace DAL
             _configuration = configuration;
         }
 
+        public static List<TblUserType> GetUserType()
+        {
+            using (var db = new SandboxContext())
+            {
+                var data = db.TblUserTypes.ToList();
+                return data;
+            }
+        }
+
+        //public static CreateUser()
+
         public void YourMethod()
         {
-            // Retrieve connection string from appsettings.json
             string connectionString = _configuration.GetConnectionString("DefaultConnection");
-
-            // Create SqlConnection object
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
-                    // Open the connection
                     connection.Open();
-
-                    // Connection opened successfully, you can perform your database operations here
                 }
                 catch (SqlException ex)
                 {

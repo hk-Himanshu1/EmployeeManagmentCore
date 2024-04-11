@@ -41,6 +41,7 @@ namespace Program
             _configuration = configuration;
         }
 
+
         public void YourMethod()
         {
             // Use _configuration to access configuration settings

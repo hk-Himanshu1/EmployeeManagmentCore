@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagmentCore", "EmployeeManagmentCore\EmployeeManagmentCore.csproj", "{68D18DE6-6978-4B6E-B2CA-30CBD47C3634}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagmentCore", "EmployeeManagmentCore\EmployeeManagmentCore.csproj", "{68D18DE6-6978-4B6E-B2CA-30CBD47C3634}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{27562AC5-F543-43C5-8337-8552F44E1290}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{27562AC5-F543-43C5-8337-8552F44E1290}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5C7C4B81-C5A6-4970-8DA7-D5D5B3D297E5}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.txt = Readme.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
